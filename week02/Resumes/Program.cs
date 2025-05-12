@@ -16,7 +16,13 @@ class Program
         job2._startYear = 2020;
         job2._endYear = 2023;
 
-        job1.Display();
-        job2.Display();
+        //job1.Display();
+        //job2.Display();
+
+        Resume myResume = new Resume();
+        myResume._name = "Ivan Suarez";
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+        myResume.Display();
     }
 }
