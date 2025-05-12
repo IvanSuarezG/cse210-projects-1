@@ -4,40 +4,51 @@ class Program
 {
     static void Main(string[] args)
     {
-        Start:
-        Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1,100);
-        
-        int attemps = 0;
-        string try_again = "";
+        string tryAgain;
 
-        while (try_again != "no")
+        do
         {
-            Console.WriteLine("What is the magic number?");
-            string temp2 = Console.ReadLine();
-            int guess_number = int.Parse(temp2);
+            Random randomGenerator = new Random();
+            int number = randomGenerator.Next(1, 100);
+            int attempts = 0;
+            int guess = -1;
 
-            if (guess_number > number)
+            Console.WriteLine("Guess the magic number between 1 and 100!");
+
+            while (guess != number)
             {
-                Console.WriteLine("Higher");
-                attemps = attemps + 1;
-            }else if (guess_number < number)
-            {
-                 Console.WriteLine("Lower");
-                 attemps = attemps + 1;
-            }else{
-                 attemps = attemps + 1;
-                 Console.WriteLine("Congratulations!");
-                 Console.WriteLine("You guess it !");
-                 Console.WriteLine($"Intents: {attemps}");
-                 Console.WriteLine("Do you want to play again?");
-                 try_again = Console.ReadLine();
-                 if (try_again == "yes"){
-                    attemps = 0;
-                    goto Start;
-                 }
+                Console.Write("What is your guess? ");
+                string input = Console.ReadLine();
+
+                if (!int.TryParse(input, out guess))
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                    continue;
+                }
+
+                attempts++;
+
+                if (guess > number)
+                {
+                    Console.WriteLine("Lower");
+                }
+                else if (guess < number)
+                {
+                    Console.WriteLine("Higher");
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations!");
+                    Console.WriteLine("You guessed it!");
+                    Console.WriteLine($"Attempts: {attempts}");
+                }
             }
-        }
+
+            Console.Write("Do you want to play again? (yes/no): ");
+            tryAgain = Console.ReadLine();
+
+        } while (tryAgain == "yes");
+
         Console.WriteLine("End Program!");
     }
 }
