@@ -27,7 +27,13 @@ public class ReflectingActivity : Activity
             "How did that experience shape who you are today?",
             "What did you learn about yourself from that experience?",
             "How can you apply what you learned to future challenges?",
-            "What would you do differently if you faced a similar situation again?"
+            "What would you do differently if you faced a similar situation again?",
+            "What strengths did you draw on to overcome the challenge?",
+            "How did that experience change your perspective on life?",
+            "What emotions did you feel during that time, and how did they affect your actions?",
+            "How can you use the lessons learned from that experience to help others?",
+            "How can you cultivate a mindset of resilience in your daily life?"
+
         };
 
     }
