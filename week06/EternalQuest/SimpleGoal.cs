@@ -39,7 +39,7 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentation()
     {
         // Return a detailed string representation of the goal
-        return $"{_shortName} : {_description} - (Points: {_points})";
+        return $" {_description} {_shortName} :  - (Points: {_points})";
     }
     
 }
